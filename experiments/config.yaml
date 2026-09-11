@@ -1,0 +1,110 @@
+exp_1:
+  epochs: 60
+  batch_size: 256
+  learning_rate_vit: 1e-4
+  learning_rate_cnn: 1e-3
+  fractions: [0.05, 0.1, 0.25, 0.5, 1.0]
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+
+exp_2:
+  patch_sizes: [4, 8, 16]
+  batch_size: 256
+  epochs: 60
+  learning_rate: 1e-4
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+
+exp_3:
+  epochs: 60
+  batch_size: 256
+  learning_rate: 1e-4
+  variants:
+    - name: ViT with CLS token
+      use_cls_token: true
+    - name: ViT with Mean Pooling
+      use_cls_token: false
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+
+exp_4:
+  epochs: 60
+  batch_size: 256
+  learning_rate: 1e-4
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+  positional_variants: [learnable, sinusoidal, none]
+
+exp_5:
+  epochs: 60
+  batch_size: 256
+  learning_rate: 1e-4
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+
+exp_6:
+  epochs: 60
+  batch_size: 256
+  learning_rate: 1e-4
+  base_vit_config:
+    img_size: 32
+    patch_size: 8
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable
+  stride_variants:
+    non_overlapping: 4
+    overlapping: 2
+
+exp_7:
+  vit_epochs: 60
+  probe_epochs: 60
+  batch_size: 256
+  learning_rate: 1e-4
+  base_vit_config:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 192
+    depth: 12
+    num_heads: 3
+    mlp_ratio: 4
+    use_cls_token: true
+    pos_embed_type: learnable

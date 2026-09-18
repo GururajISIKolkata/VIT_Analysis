@@ -1,7 +1,7 @@
-DS-265 DLCV 2026: Assignment 2
+
 ====================================
 
-Author: Ritik Kumar Badiya
+Author: Gururaj Singh
 
 ---
 
@@ -52,5 +52,4 @@ pip install torch torchvision numpy matplotlib tqdm pyyaml
 ---
 
 
-## Contact
-For queries, contact: ritikbadiya@iisc.ac.in
+
